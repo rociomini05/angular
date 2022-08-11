@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Tarea} from '../../models/tarea.models';
+import { Tarea} from '../models/tarea.models';
 
 @Component({
   selector: 'app-formulario',

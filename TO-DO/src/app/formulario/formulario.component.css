@@ -1,0 +1,12 @@
+.form-group
+{
+    display:flex;
+    flex-direction: column;
+    margin-bottom:20px;
+
+}
+
+.formulario{
+    padding:10px;
+    
+}
