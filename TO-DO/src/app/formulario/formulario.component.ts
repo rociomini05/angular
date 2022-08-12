@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
 import { Tarea} from '../models/tarea.model';
 
 @Component({
@@ -7,18 +8,22 @@ import { Tarea} from '../models/tarea.model';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
+@Output() tareaCreada: EventEmitter  <Tarea>;
 
   nuevaTarea: Tarea;
 
   constructor() {
     this.nuevaTarea = new Tarea();
+    this.tareaCreada = new EventEmitter ();
    }
    
   ngOnInit(): void {
   }
 
   onClick(){
-    
+
+    this.tareaCreada.emit(this.nuevaTarea);
+    this.nuevaTarea = new Tarea();
   }
 
 }

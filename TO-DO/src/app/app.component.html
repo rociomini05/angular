@@ -1,6 +1,6 @@
 <div class="container">
   <div class="izquierda">
-    <app-formulario></app-formulario>
+    <app-formulario (tareaCreada)="onTareaCreada($event)"></app-formulario>
   </div>
   <div class="derecha">
     <app-listas></app-listas>
