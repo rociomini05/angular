@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Tarea} from '../models/tarea.models';
+import { Tarea} from '../models/tarea.model';
 
 @Component({
   selector: 'app-formulario',
@@ -15,6 +15,10 @@ export class FormularioComponent implements OnInit {
    }
    
   ngOnInit(): void {
+  }
+
+  onClick(){
+    
   }
 
 }

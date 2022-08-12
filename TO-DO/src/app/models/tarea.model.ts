@@ -1,4 +1,3 @@
-import { timeStamp } from "console";
 
 export class Tarea{
     titulo:string;
