@@ -18,8 +18,8 @@ export class ListaProductosComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onClick (pProducto){
-    cp
+  onClick (pProducto: any){
+    console.log(pProducto);
   }
 
 }
