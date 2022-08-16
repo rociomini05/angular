@@ -21,7 +21,6 @@ export class FormularioComponent implements OnInit {
   }
 
   onClick(){
-
     this.tareaCreada.emit(this.nuevaTarea);
     this.nuevaTarea = new Tarea();
   }

@@ -1,1 +1,11 @@
-<p>listas works!</p>
+<div class="lista">
+    <div class="tarea" *ngfor="let tarea of tareas">
+
+
+        {{tarea.Titulo}}
+        <h3>Titulo</h3>
+        <p>Descripcion</p>
+        <button>COMPLETA / INCOMPLETA</button>
+
+    </div>
+</div>

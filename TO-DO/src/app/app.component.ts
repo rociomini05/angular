@@ -15,7 +15,7 @@ export class AppComponent {
     this.arrTareas = [];
   }
 
-  onTareaCreada($event: any){
+  onTareaCreada($event: Tarea){
     this.arrTareas.push($event);
   }
 

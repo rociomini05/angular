@@ -7,7 +7,8 @@ import { Tarea } from '../models/tarea.model';
   styleUrls: ['./listas.component.css']
 })
 export class ListasComponent implements OnInit {
-  @Input() tareas: Tarea[];
+  @Input()
+  tareas!: Tarea[];
 
   constructor() { }
 
@@ -15,3 +16,4 @@ export class ListasComponent implements OnInit {
   }
 
 }
+ 
