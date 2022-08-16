@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Producto } from '../../models/producto.model';
 
 @Component({
   selector: 'app-lista-productos',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaProductosComponent implements OnInit {
 
-  constructor() { }
+  @Input() titulo: string;
+  @Input()
+  productos: Producto[] = [];
+  constructor() {
+    this.titulo='';
+   
+   }
 
   ngOnInit(): void {
+  }
+  onClick (pProducto){
+    cp
   }
 
 }
