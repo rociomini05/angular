@@ -5,6 +5,6 @@
     <app-lista-productos titulo="Bebida" [productos]="arrBebida" (productoSeleccionado)="onProductoSeleccionado($event)"></app-lista-productos>
   </div>
   <div class="derecha">
-    <app-comanda></app-comanda>
+    <app-comanda [arrProducto]="ProductoSeleccionado"></app-comanda>
   </div>
 </div>
