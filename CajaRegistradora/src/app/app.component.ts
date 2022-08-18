@@ -9,7 +9,10 @@ import { Producto } from './models/producto.model';
 export class AppComponent {
   arrComida : Producto[];
   arrBebida : Producto[];
+  ProductoSeleccionado : Producto[];
   constructor() {
+
+    this.ProductoSeleccionado = [];
     this.arrComida  = [
       new Producto('Cocido', 'https://i.blogs.es/31e3ce/cocido-madrileno/840_560.jpg', 10.50),
       new Producto('Rollitos', 'https://www.cocinacaserayfacil.net/wp-content/uploads/2020/03/Recetas-de-comida-para-llevar-al-trabajo.jpg', 10.50),
@@ -25,5 +28,8 @@ export class AppComponent {
       new Producto('H', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc9C_pkTyFAogSZUKs5NuLQD839jMQ6HsymQ&usqp=CAU', 10.50),
       new Producto('I', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKTORyE25WV7hCWczRDlZ63G4JyI-MaNa5Sg&usqp=CAU', 10.50)
     ]
+  }
+  onProductoSeleccionado($event: any){
+    this.ProductoSeleccionado.push($event);
   }
 }

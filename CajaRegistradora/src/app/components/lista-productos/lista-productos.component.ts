@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output  } from '@angular/core';
 import { Producto } from '../../models/producto.model';
 
 @Component({
@@ -11,15 +11,17 @@ export class ListaProductosComponent implements OnInit {
   @Input() titulo: string;
   @Input()
   productos: Producto[] = [];
+
+  @Output() productoSeleccionado: EventEmitter<Producto>;
   constructor() {
     this.titulo='';
-   
+   this.productoSeleccionado =  new EventEmitter();
    }
 
   ngOnInit(): void {
   }
   onClick (pProducto: any){
-    console.log(pProducto);
+    this.productoSeleccionado.emit(pProducto);
   }
 
 }
