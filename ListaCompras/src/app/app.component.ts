@@ -7,12 +7,21 @@ import { Producto } from './models/producto.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-productosSeleccionados: Producto[];
-
-constructor(){
-  this.productosSeleccionados = [];
-}
-onProductoCreado($event: any){
-this.productosSeleccionados.push($event);
-}
+  productosSeleccionados: Producto[];
+  productosComprados: Producto[];
+  constructor() {
+    this.productosSeleccionados = [];
+    this.productosComprados = [];
+  }
+  onProductoCreado($event: any) {
+    this.productosSeleccionados.push($event);
+  }
+  onProductoSeleccionado($event: any) {
+    const prod = this.productosSeleccionados.splice($event, 1);
+    this.productosComprados.push(prod[0]);
+  }
+  onProductoNoSeleccionado($event:any){
+    const prod = this.productosComprados.splice($event,1);
+    this.productosSeleccionados.push(prod[0]);
+  }
 }
