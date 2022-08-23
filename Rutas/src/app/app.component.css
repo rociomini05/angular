@@ -1,0 +1,9 @@
+.rutas{
+    display: flex;
+    flex-direction: column;
+}
+
+.activa{
+    color: white;
+    background-color: seagreen;
+}
