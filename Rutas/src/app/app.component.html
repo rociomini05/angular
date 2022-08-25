@@ -9,7 +9,7 @@
 <router-outlet></router-outlet>
 
 <div class="botones">
-  <button>Sobre Mi</button>
-  <button>Informacion de la pagina</button>
-  <button>Contacta con nosotros</button>
+  <button (click)="onClick('sobre')">Sobre Mi</button>
+  <button (click)="onClick('informacion')">Informacion de la pagina</button>
+  <button (click)="onClick('contacto')">Contacta con nosotros</button>
 </div>
