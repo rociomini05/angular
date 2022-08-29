@@ -7,7 +7,7 @@ import { PersonasService } from 'src/app/services/personas.service';
   styleUrls: ['./lista.component.css']
 })
 export class ListaComponent implements OnInit {
-
+arrPersonas: Persona[];
   constructor(private personasService: PersonasService) { }
 
   ngOnInit(): void {
