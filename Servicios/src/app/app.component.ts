@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Persona } from './models/persona.model';
+import { PersonasService } from './services/personas.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Servicios';
+  arrPersonas: Persona[] = [];
+
+constructor(private personasService:PersonasService){}
+
+  ngOnInit() {
+  this.arrPersonas = this.personasService.getAll();
+ 
+  }
+
+
 }
