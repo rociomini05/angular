@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EscritoresService } from '../escritores.service';
+import { Escritor } from '../models/escritor.model';
 
 @Component({
   selector: 'app-lista-escritores',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaEscritoresComponent implements OnInit {
 
-  constructor() { }
+  arrEscritores: Escritor[] = [];
+  constructor(private escritoresService: EscritoresService) {
 
-  ngOnInit(): void {
   }
 
+  async ngOnInit(): Promise<void> {
+    //  this.arrEscritores = this.escritoresService.getAll();
+    // this.escritoresService.getAllPromise()
+    //    .then(escritores => {
+    //      this.arrEscritores = escritores;
+    //    });
+    this.arrEscritores = await this.escritoresService.getAllPromise();
+
+
+  }
+
+  async onChange($event: any) {
+    console.log($event.target.value);
+    if ($event.target.value === 'todos') {
+      this.arrEscritores = await this.escritoresService.getAllPromise();
+    } else {
+      this.arrEscritores = await this.escritoresService.getByPais($event.target.value)
+    }
+  }
 }
